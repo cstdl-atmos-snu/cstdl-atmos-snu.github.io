@@ -5,6 +5,8 @@ sitemap: false
 permalink: /publications/
 ---
 
+<style>.fade-in-section{opacity:1 !important;transform:none !important;}</style>
+
 ## Publications
 
 <p>Updated automatically from the lab database. * corresponding author. Full list on <a href="https://tinyurl.com/daehyunkim-publications">Google Scholar</a>.</p>
