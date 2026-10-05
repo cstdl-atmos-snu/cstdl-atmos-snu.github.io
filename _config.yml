@@ -25,7 +25,7 @@ links:
 accent_color: "#0f6f8f"      # theme color for links and buttons
 dark_mode: true              # show dark mode toggle in navbar
 description: "Convective Systems/Tropical Dynamics Lab (Daehyun Kim), Seoul National University: tropical convection, the MJO, equatorial waves, and tropical cyclones"
-baseurl: "https://cstdl-atmos-snu.github.io"
+baseurl: ""
 url: "https://cstdl-atmos-snu.github.io"
 
 # Google Analytics — paste your GA4 measurement ID, or leave blank
