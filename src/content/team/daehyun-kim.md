@@ -2,7 +2,7 @@
 name: "Daehyun Kim"
 role: "Principal Investigator"
 title: ["Associate Professor"]
-avatar: "../../assets/team/daehyun-kim.png"
+avatar: "../../assets/team/daehyun-kim.jpg"
 bio: "Tropical convection, the MJO, equatorial waves, and climate model evaluation."
 email: "daehyun@snu.ac.kr"
 googleScholar: "https://tinyurl.com/daehyunkim-publications"
