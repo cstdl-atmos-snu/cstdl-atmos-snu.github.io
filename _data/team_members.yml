@@ -1,0 +1,63 @@
+# Current researchers and students. Generated from the CSTDL sheet (List tab).
+# Replace photo with images/team/<file>.jpg once a headshot is available.
+
+- name: Jaemyeong Mango Seo
+  photo: team/jaemyeong-mango-seo.svg
+  info: "Research Scientist, climate model development"
+
+- name: Seung-Mok Paik
+  photo: team/seung-mok-paik.svg
+  info: "Research Assistant Professor, extreme precipitation"
+  website: https://sites.google.com/view/seungmok-paik/
+
+- name: Jihong Moon
+  photo: team/jihong-moon.svg
+  info: "Postdoctoral Researcher, tropical cyclone seeds and rapid intensification"
+
+- name: Kyungok Choi
+  photo: team/kyungok-choi.svg
+  info: "Postdoctoral Researcher, climate model evaluation"
+
+- name: Hera Kim
+  photo: team/hera-kim.svg
+  info: "Postdoctoral Researcher, tropical cyclone seeds in S2S models, MJO prediction and predictability"
+
+- name: Pedro Angulo-Umana
+  photo: team/pedro-angulo-umana.svg
+  info: "Postdoctoral Researcher, extreme precipitation"
+
+- name: Muchan Kim
+  photo: team/muchan-kim.svg
+  info: "Ph.D. Student, tropical cyclone seeds"
+
+- name: Yugunn Lee
+  photo: team/yugunn-lee.svg
+  info: "Ph.D. Student, tropical cirrus clouds"
+
+- name: Doyeon Kim
+  photo: team/doyeon-kim.svg
+  info: "Integrated M.S./Ph.D. Student, precipitation mechanisms"
+
+- name: Jaeeon Kim
+  photo: team/jaeeon-kim.svg
+  info: "Integrated M.S./Ph.D. Student, tropical cyclone track predictability"
+
+- name: Younghoon Mo
+  photo: team/younghoon-mo.svg
+  info: "Integrated M.S./Ph.D. Student, MJO predictability"
+
+- name: Jeonghun Park
+  photo: team/jeonghun-park.svg
+  info: "Integrated M.S./Ph.D. Student, survival of tropical cyclone seeds"
+
+- name: GeunHyeok Jang
+  photo: team/geunhyeok-jang.svg
+  info: "Integrated M.S./Ph.D. Student, vertical velocity in tropical deep convective systems"
+
+- name: Jin You
+  photo: team/jin-you.svg
+  info: "M.S. Student, tropical deep convective systems"
+
+- name: Yuna Jin
+  photo: team/yuna-jin.svg
+  info: "M.S. Student, humid heatwaves"
