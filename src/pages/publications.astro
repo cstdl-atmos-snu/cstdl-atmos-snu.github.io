@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../config';
+
+const all = await getCollection('publications');
+const pending = all
+  .filter(p => p.data.status !== 'published')
+  .sort((a, b) => ['accepted', 'revised', 'submitted'].indexOf(a.data.status) - ['accepted', 'revised', 'submitted'].indexOf(b.data.status));
+const published = all
+  .filter(p => p.data.status === 'published')
+  .sort((a, b) => (b.data.number ?? 0) - (a.data.number ?? 0));
+const years = [...new Set(published.map(p => p.data.year))].sort((a, b) => b - a);
+---
+
+<Layout title="Publications">
+  <div class="max-w-4xl mx-auto px-4 py-12 sm:py-16">
+    <header class="mb-10">
+      <h1 class="text-4xl font-bold text-gray-900 mb-3" data-i18n-key="nav.publications">Publications</h1>
+      <p class="text-gray-600">
+        {published.length} peer-reviewed papers and book chapters. * corresponding author.
+        Also on <a href={SITE.scholar} target="_blank" rel="noopener" class="text-blue-600 hover:underline">Google Scholar</a>.
+      </p>
+    </header>
+
+    {pending.length > 0 && (
+      <section class="mb-14">
+        <h2 class="text-xl font-bold text-gray-900 border-b-2 border-blue-600 pb-2 mb-2">In press and under review</h2>
+        {pending.map(p => <PublicationItem entry={p} />)}
+      </section>
+    )}
+
+    <nav class="sticky top-16 z-10 bg-white/95 backdrop-blur py-3 mb-6 border-b border-gray-100 flex flex-wrap gap-x-3 gap-y-1 text-sm" aria-label="Years">
+      {years.map(y => <a href={`#y${y}`} class="text-gray-500 hover:text-blue-600">{y}</a>)}
+    </nav>
+
+    {years.map(year => (
+      <section id={`y${year}`} class="mb-10 scroll-mt-32">
+        <h2 class="text-2xl font-bold text-gray-900 mb-1">{year}</h2>
+        {published.filter(p => p.data.year === year).map(p => <PublicationItem entry={p} />)}
+      </section>
+    ))}
+  </div>
+</Layout>

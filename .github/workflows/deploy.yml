@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [main, source]
+    branches: [main]
   schedule:
     - cron: "0 18 * * *"   # every day at 03:00 KST: pick up changes in the CSTDL sheet
   workflow_dispatch:         # "Run workflow" button for an immediate update
@@ -20,39 +20,37 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Generate publications (assets/ref.bib) from the CSTDL sheet
+      - name: Generate publications from the CSTDL sheet
         env:
           SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
-        run: python scripts/sheet_to_bib.py
+        run: python scripts/sheet_to_site.py
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: actions/setup-node@v4
         with:
-          ruby-version: '3.2'
-          bundler-cache: true
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
 
       - name: Build site
-        run: bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
+        run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

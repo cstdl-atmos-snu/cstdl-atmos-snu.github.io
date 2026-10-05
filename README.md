@@ -1,540 +1,293 @@
-# A website template for academics
+# 🎓 Scholar-Lite
+
+<div align="center">
+
+![Astro](https://img.shields.io/badge/Astro_v6-BC52EE?style=for-the-badge&logo=astro&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Pagefind](https://img.shields.io/badge/Pagefind-Search-FF0000?style=for-the-badge&logo=algolia&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
+
+**[English](./README.md) | [简体中文](./README.zh-CN.md)**
+
+> ## **⚡ Create your site in 30 seconds**
+> ```bash
+> npm create astro@latest -- --template fjd2004711/scholar-lite
+> ```
 
 <p align="center">
-  <img src="images/screenshots/home-hero.png" alt="Home page — light and dark mode" width="900">
+  <a href="https://app.netlify.com/start/deploy?repository=https://github.com/fjd2004711/scholar-lite" target="_blank">
+    <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify">
+  </a>
+  <a href="https://vercel.com/new/clone?repository-url=https://github.com/fjd2004711/scholar-lite" target="_blank">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel">
+  </a>
 </p>
 
-<p align="center">
-  <strong>A beautiful, production-ready Jekyll website for academics and research groups.</strong><br>
-  Fork it. Fill in your info. Publish.
-</p>
-
-<h3 align="center">
-  <a href="https://sbryngelson.github.io/academic-website-template/">See the live demo &rarr;</a>
-</h3>
-
-<p align="center">
-  <a href="#quick-start">Quick Start</a> &middot;
-  <a href="#features">Features</a> &middot;
-  <a href="#customization">Customization</a> &middot;
-  <a href="#publications">Publications</a> &middot;
-  <a href="#hosting">Hosting</a>
-</p>
-
-### Used by 200+ academics worldwide
-
-<a href="https://ilafly.github.io/" target="_blank">★</a>
-<a href="https://i-vesseg.github.io/" target="_blank">★</a>
-<a href="https://xfangsn.github.io/" target="_blank">★</a>
-<a href="https://joshuagob.github.io" target="_blank">★</a>
-<a href="https://bczheng.com/" target="_blank">★</a>
-<a href="https://bazilinskyy.github.io/" target="_blank">★</a>
-<a href="https://www.coreytcallaghan.com/" target="_blank">★</a>
-<a href="https://minseoksong.github.io/" target="_blank">★</a>
-<a href="https://acme-group-cmu.github.io/" target="_blank">★</a>
-<a href="https://barrylee36.github.io/" target="_blank">★</a>
-<a href="https://adisun94.github.io/" target="_blank">★</a>
-<a href="https://comp-physics.group" target="_blank">★</a>
-<a href="https://spike.doc.ic.ac.uk/" target="_blank">★</a>
-<a href="http://www.msc.univ-paris-diderot.fr/~berhanu/" target="_blank">★</a>
-<a href="https://mashadab.github.io/" target="_blank">★</a>
-<a href="https://home.iitk.ac.in/~lalit/" target="_blank">★</a>
-<a href="https://ethan-pickering.github.io/" target="_blank">★</a>
-<a href="https://pedro-dm-gomes.github.io/" target="_blank">★</a>
-<a href="https://3tbk.github.io/3tbk/" target="_blank">★</a>
-<a href="https://felipesua.github.io/" target="_blank">★</a>
-<a href="https://shivvrat.github.io/" target="_blank">★</a>
-<a href="https://ritamraha.github.io/" target="_blank">★</a>
-<a href="https://matsesseldeurs.github.io/" target="_blank">★</a>
-<a href="https://michelleblom.github.io/" target="_blank">★</a>
-<a href="https://jrd971000.github.io/" target="_blank">★</a>
-<a href="https://melashri.net/" target="_blank">★</a>
-<a href="https://sahatulika15.github.io" target="_blank">★</a>
-<a href="https://mzhanglab.github.io" target="_blank">★</a>
-<a href="https://soar-lab.github.io" target="_blank">★</a>
-<a href="https://azharghafoor.github.io/" target="_blank">★</a>
-<a href="https://hyunwoo.info/" target="_blank">★</a>
-<a href="https://computervision0.github.io/" target="_blank">★</a>
-<a href="https://adrashid.github.io/personal-webpage/index.html" target="_blank">★</a>
-<a href="https://aleemkhan62.github.io/" target="_blank">★</a>
-<a href="https://vaibhavb007.github.io/" target="_blank">★</a>
-<a href="https://gabry993.github.io/" target="_blank">★</a>
-<a href="https://shantnuu.github.io/" target="_blank">★</a>
-<a href="https://wenbinluomath.github.io/" target="_blank">★</a>
-<a href="https://aibio-lab.github.io/" target="_blank">★</a>
-<a href="https://dartsushi.github.io/" target="_blank">★</a>
-<a href="https://efstathia-soufleri.github.io/" target="_blank">★</a>
-<a href="https://zchoffin.github.io/" target="_blank">★</a>
-<a href="https://wangyb97.github.io/" target="_blank">★</a>
-<a href="https://sgleem.github.io/" target="_blank">★</a>
-<a href="https://has97.github.io/" target="_blank">★</a>
-<a href="https://albertgassol1.github.io/" target="_blank">★</a>
-<a href="https://seanpark05.github.io/" target="_blank">★</a>
-<a href="https://miki998.github.io/" target="_blank">★</a>
-<a href="https://wilfonba.github.io/" target="_blank">★</a>
-<a href="https://saharnazb.github.io/" target="_blank">★</a>
-<a href="https://mvmacfarlane.github.io/" target="_blank">★</a>
-<a href="https://saharnaz.org/" target="_blank">★</a>
-<a href="https://www.isnicholas.com/" target="_blank">★</a>
-<a href="https://jojox666.github.io/" target="_blank">★</a>
-<a href="https://zhiyu7.github.io/" target="_blank">★</a>
-<a href="https://awen-li.github.io/" target="_blank">★</a>
-<a href="https://yukiiwong.github.io/" target="_blank">★</a>
-<a href="https://joeyleehk.github.io/" target="_blank">★</a>
-<a href="https://fabayocbocjr.github.io/" target="_blank">★</a>
-<a href="https://www.quantumcookie.xyz/" target="_blank">★</a>
-<a href="https://adityanandy.github.io/" target="_blank">★</a>
-<a href="https://jlastro.github.io/" target="_blank">★</a>
-<a href="https://yunzhe-li.top/" target="_blank">★</a>
-<a href="https://xia-hu.github.io/" target="_blank">★</a>
-<a href="https://p-bajpai.github.io/" target="_blank">★</a>
-<a href="https://aashen12.github.io/" target="_blank">★</a>
-<a href="https://Abdurrahheem.github.io/" target="_blank">★</a>
-<a href="https://abhimanyu911.github.io/" target="_blank">★</a>
-<a href="https://abhishek-sehgal.github.io/" target="_blank">★</a>
-<a href="https://adityaIyerramesh98.github.io/" target="_blank">★</a>
-<a href="https://AdityaSinghDevs.github.io/" target="_blank">★</a>
-<a href="https://aipsita.github.io/" target="_blank">★</a>
-<a href="https://albertopadovan.github.io/" target="_blank">★</a>
-<a href="https://alirezanorouziazad.github.io/" target="_blank">★</a>
-<a href="https://amy-tabb.github.io/" target="_blank">★</a>
-<a href="https://anedelin.github.io/" target="_blank">★</a>
-<a href="https://ansharora7.github.io/" target="_blank">★</a>
-<a href="https://avadapal.github.io/" target="_blank">★</a>
-<a href="https://avibagchi.github.io/" target="_blank">★</a>
-<a href="https://bc1032.github.io/" target="_blank">★</a>
-<a href="https://BDalheimer.github.io/" target="_blank">★</a>
-<a href="https://Bennibraun.github.io/" target="_blank">★</a>
-<a href="https://binbin-xie.github.io/" target="_blank">★</a>
-<a href="https://BiomedLabUGgt.github.io/" target="_blank">★</a>
-<a href="https://c752334430.github.io/" target="_blank">★</a>
-<a href="https://Chemical118.github.io/" target="_blank">★</a>
-<a href="https://chihaoy.github.io/" target="_blank">★</a>
-<a href="https://cjaynjoku.github.io/" target="_blank">★</a>
-<a href="https://DennisWayo.github.io/" target="_blank">★</a>
-<a href="https://dginsberg.github.io/" target="_blank">★</a>
-<a href="https://dgiovanis.github.io/" target="_blank">★</a>
-<a href="https://donghuison.github.io/" target="_blank">★</a>
-<a href="https://donghuixin.github.io/" target="_blank">★</a>
-<a href="https://drgHannah.github.io/" target="_blank">★</a>
-<a href="https://DrWeiChen.github.io/" target="_blank">★</a>
-<a href="https://econpotter.github.io/" target="_blank">★</a>
-<a href="https://elitalobo.github.io/" target="_blank">★</a>
-<a href="https://emilyvansyoc.github.io/" target="_blank">★</a>
-<a href="https://Erd-ling.github.io/" target="_blank">★</a>
-<a href="https://estimation-control-learning-laboratory.github.io/" target="_blank">★</a>
-<a href="https://EthanJ666.github.io/" target="_blank">★</a>
-<a href="https://f-farhan.github.io/" target="_blank">★</a>
-<a href="https://fekaputra.github.io/" target="_blank">★</a>
-<a href="https://FishyguyNeel.github.io/" target="_blank">★</a>
-<a href="https://flampouris.github.io/" target="_blank">★</a>
-<a href="https://flavio2018.github.io/" target="_blank">★</a>
-<a href="https://Frellaa.github.io/" target="_blank">★</a>
-<a href="https://gabrielpachecoribeiro.github.io/" target="_blank">★</a>
-<a href="https://gcg-helsinki.github.io/" target="_blank">★</a>
-<a href="https://giorgioarcara.github.io/" target="_blank">★</a>
-<a href="https://gmtang1212.github.io/" target="_blank">★</a>
-<a href="https://gmurtaza404.github.io/" target="_blank">★</a>
-<a href="https://Grupo-MATE.github.io/" target="_blank">★</a>
-<a href="https://guancai.github.io/" target="_blank">★</a>
-<a href="https://guharoysayak.github.io/" target="_blank">★</a>
-<a href="https://haochey.github.io/" target="_blank">★</a>
-<a href="https://HC-teemo.github.io/" target="_blank">★</a>
-<a href="https://heymarco.github.io/" target="_blank">★</a>
-<a href="https://hkkaushik.github.io/" target="_blank">★</a>
-<a href="https://HORIZON-COVER.github.io/" target="_blank">★</a>
-<a href="https://hrositi.github.io/" target="_blank">★</a>
-<a href="https://hsparkastro.github.io/" target="_blank">★</a>
-<a href="https://hyojoonkim.github.io/" target="_blank">★</a>
-<a href="https://JamesL404.github.io/" target="_blank">★</a>
-<a href="https://jasonarothman.github.io/" target="_blank">★</a>
-<a href="https://Jeffery-Zhou.github.io/" target="_blank">★</a>
-<a href="https://jianxyou.github.io/" target="_blank">★</a>
-<a href="https://Jiawei-sn.github.io/" target="_blank">★</a>
-<a href="https://jortizcs.github.io/" target="_blank">★</a>
-<a href="https://jtonos.github.io/" target="_blank">★</a>
-<a href="https://JudithBouman2412.github.io/" target="_blank">★</a>
-<a href="https://jujubonda.github.io/" target="_blank">★</a>
-<a href="https://jumeike.github.io/" target="_blank">★</a>
-<a href="https://Kadle11.github.io/" target="_blank">★</a>
-<a href="https://KaihangShi.github.io/" target="_blank">★</a>
-<a href="https://KALU-KELECHI-GABRIEL.github.io/" target="_blank">★</a>
-<a href="https://Khris-VI.github.io/" target="_blank">★</a>
-<a href="https://KieuTruong.github.io/" target="_blank">★</a>
-<a href="https://Koromonnnnnnnn.github.io/" target="_blank">★</a>
-<a href="https://ktvank.github.io/" target="_blank">★</a>
-<a href="https://Kunlun-Zhu.github.io/" target="_blank">★</a>
-<a href="https://kwakkyoleen.github.io/" target="_blank">★</a>
-<a href="https://leowangx2013.github.io/" target="_blank">★</a>
-<a href="https://lokingdav.github.io/" target="_blank">★</a>
-<a href="https://ltinphan.github.io/" target="_blank">★</a>
-<a href="https://lzy37ld.github.io/" target="_blank">★</a>
-<a href="https://manshri.github.io/" target="_blank">★</a>
-<a href="https://martinezach.github.io/" target="_blank">★</a>
-<a href="https://minhphd.github.io/" target="_blank">★</a>
-<a href="https://mohamed-s-ibrahim.github.io/" target="_blank">★</a>
-<a href="https://mohammedaflah.github.io/" target="_blank">★</a>
-<a href="https://monroyaume5.github.io/" target="_blank">★</a>
-<a href="https://mrajiullah.github.io/" target="_blank">★</a>
-<a href="https://msstate-athena.github.io/" target="_blank">★</a>
-<a href="https://mvanwyngarden.github.io/" target="_blank">★</a>
-<a href="https://Naeele.github.io/" target="_blank">★</a>
-<a href="https://Nebularaid2000.github.io/" target="_blank">★</a>
-<a href="https://neuronpain.github.io/" target="_blank">★</a>
-<a href="https://NickJi98.github.io/" target="_blank">★</a>
-<a href="https://noahzegna.github.io/" target="_blank">★</a>
-<a href="https://overlorde.github.io/" target="_blank">★</a>
-<a href="https://p4rkerw.github.io/" target="_blank">★</a>
-<a href="https://Penghuihuang2000.github.io/" target="_blank">★</a>
-<a href="https://Pragati-Meshram.github.io/" target="_blank">★</a>
-<a href="https://qianhuimen.github.io/" target="_blank">★</a>
-<a href="https://qzkiyoshi.github.io/" target="_blank">★</a>
-<a href="https://ricethchang.github.io/" target="_blank">★</a>
-<a href="https://robenlunardi.github.io/" target="_blank">★</a>
-<a href="https://royess.github.io/" target="_blank">★</a>
-<a href="https://rupendra248.github.io/" target="_blank">★</a>
-<a href="https://SantiagoxSosa.github.io/" target="_blank">★</a>
-<a href="https://saorisakaue.github.io/" target="_blank">★</a>
-<a href="https://SelzerConst.github.io/" target="_blank">★</a>
-<a href="https://sherdencooper.github.io/" target="_blank">★</a>
-<a href="https://shsjxzh.github.io/" target="_blank">★</a>
-<a href="https://Smadx.github.io/" target="_blank">★</a>
-<a href="https://sophie-carneiro.github.io/" target="_blank">★</a>
-<a href="https://ssun32.github.io/" target="_blank">★</a>
-<a href="https://st-eislab.github.io/" target="_blank">★</a>
-<a href="https://suprovo97.github.io/" target="_blank">★</a>
-<a href="https://takouajendoubi.github.io/" target="_blank">★</a>
-<a href="https://ThomasMartinez0.github.io/" target="_blank">★</a>
-<a href="https://thu-gyt.github.io/" target="_blank">★</a>
-<a href="https://tokeron.github.io/" target="_blank">★</a>
-<a href="https://ttadano.github.io/" target="_blank">★</a>
-<a href="https://valentinsix.github.io/" target="_blank">★</a>
-<a href="https://victorolaiya.github.io/" target="_blank">★</a>
-<a href="https://vmetsis.github.io/" target="_blank">★</a>
-<a href="https://wanganzhi.github.io/" target="_blank">★</a>
-<a href="https://wjin4.github.io/" target="_blank">★</a>
-<a href="https://wufan-here.github.io/" target="_blank">★</a>
-<a href="https://wumirose.github.io/" target="_blank">★</a>
-<a href="https://xianzhangchen.github.io/" target="_blank">★</a>
-<a href="https://xietian1.github.io/" target="_blank">★</a>
-<a href="https://Xueyi-Wang.github.io/" target="_blank">★</a>
-<a href="https://xyhanO.github.io/" target="_blank">★</a>
-<a href="https://yasserfarouk.github.io/" target="_blank">★</a>
-<a href="https://yewenC.github.io/" target="_blank">★</a>
-<a href="https://yilevine.github.io/" target="_blank">★</a>
-<a href="https://ykl7.github.io/" target="_blank">★</a>
-<a href="https://yminzhang.github.io/" target="_blank">★</a>
-<a href="https://yuminglab.github.io/" target="_blank">★</a>
-<a href="https://zeyuD.github.io/" target="_blank">★</a>
-<a href="https://zhoulongyu.github.io/" target="_blank">★</a>
-
-__Using this template? Share your site and I'll add it here!__
+**The Next-Generation Static Website Template for Academic Labs & Scholars.**
+*Blazing fast, zero-config BibTeX import, and multilingual search engine built-in.*
 
 ---
 
-## Features
+## 🚀 Quick Start (No Coding Required)
 
-### Design
-- **Source Serif 4 + DM Sans** typography — elegant serif headings paired with a clean geometric sans body
-- **Warm parchment palette** with subtle noise texture for depth, not flat generic whites
-- **Dark mode** — toggle in navbar, auto-detects system preference, persists across visits
-- **Frosted glass navbar** with backdrop blur, active page indicator, and scroll shadow
-- **Dynamic SVG favicon** — auto-generated from your initials + accent color
-- **Responsive** — CSS Grid layouts that adapt from desktop to tablet to mobile
+1.  **Click** the `Deploy to Netlify` or `Deploy with Vercel` button above.
+2.  **Wait** for the deployment to finish.
+3.  **Go to** your new GitHub repository and find `citations.bib`.
+4.  **Upload** your own BibTeX file to replace it.
+5.  **Done!** Your website updates automatically in 1 minute.
 
-### Interactions
-- **Site-wide search** — press `Cmd+K` (or `Ctrl+K`) to instantly search all pages
-- **Copy BibTeX** — hover any bibtex block to reveal a one-click copy button
-- **Animated link underlines** — smooth gradient underlines that grow on hover
-- **Card hover effects** — lift + shadow on team cards, research cards, and profile photo
-- **Image zoom** — subtle scale on hover for team photos, research thumbnails, and the banner
-- **Back-to-top button** — appears on scroll, smooth scrolls up
-- **Smooth expand/collapse** — CSS transitions on publication abstracts and BibTeX entries
+---
 
-### Publications
-- **Auto-generated from BibTeX** via Jekyll Scholar — just edit `assets/ref.bib`
-- **Search bar** — filter publications by title, author, or year
-- **Year badges** — small accent-colored pills for quick scanning
-- **Pill buttons** — PDF, DOI, arXiv, BIB, Abstract
+<div align="center" style="margin-top: 20px;">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://scholar-lite-demo.netlify.app/" target="_blank">
+          <img src="https://img.shields.io/badge/Live_Demo-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo" />
+        </a>
+        <br />
+        <strong>Live Preview</strong>
+      </td>
+      <td align="center">
+        <a href="https://github.com/fjd2004711/scholar-lite" target="_blank">
+          <img src="https://img.shields.io/badge/Source_Code-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source Code" />
+        </a>
+        <br />
+        <strong>Repository</strong>
+      </td>
+    </tr>
+  </table>
+</div>
 
-### For New Users
-- **Interactive setup script** — run `./setup.sh` to fill in your name, title, and institution
-- **4-step `_config.yml`** — numbered sections with inline comments guide you through setup
-- **Well-commented data files** — every field in `_data/*.yml` is explained with examples
-- **Smart link handling** — empty links in config are automatically hidden (no broken icons)
+<div align="center">
+  <img src="public/assets/screenshots/home-desktop-mockup.png" width="70%" alt="Desktop View" />
+  <img src="public/assets/screenshots/mobile-view-mockup.png" width="25%" alt="Mobile View" />
+</div>
 
-### Technical
-- **Modular SASS** — organized into `base/`, `components/`, `layouts/`, `utilities/`
-- **Selective Bootstrap 5.3.3** — only imports the modules used, not the full bundle
-- **Single JS file** (4KB minified) — dark mode, search, toggles, scroll effects, copy button
-- **Auto-generated sitemap** via `jekyll-sitemap`
-- **Open Graph + Twitter Cards** — links look good when shared on social media
-- **MathJax 3** — LaTeX formula rendering out of the box
+</div>
 
-## Screenshots
+---
 
-| | |
-|:---:|:---:|
-| ![Publications](images/screenshots/publications.png) | ![Team](images/screenshots/team.png) |
-| Publications with search & year badges | Team page with card grid |
-| ![Search](images/screenshots/search.png) | |
-| Site-wide search (Cmd+K) | |
+## 🚀 Why Scholar-Lite?
 
-## Quick Start
+### ⚡ Unmatched Performance
+*   **Zero JS by Default**: Built on **Astro v6**, sending **0kb** of JavaScript to the client for content pages.
+*   **100/100 Lighthouse**: Optimized out-of-the-box for Performance, Accessibility, Best Practices, and SEO.
+*   **Tailwind CSS v4**: The latest utility-first CSS framework for rapid, modern styling.
 
-1. **Fork** [this repository](https://github.com/sbryngelson/academic-website-template)
-2. **Delete** `_config_demo.yml` (it's only for the demo site)
-3. **Install** [Jekyll](https://jekyllrb.com/docs/installation/) and run `bundle install`
-3. **Configure** your site:
-   ```bash
-   ./setup.sh          # interactive setup, or
-   vim _config.yml     # edit Steps 1-4 directly
-   ```
-4. **Add your publications** to `assets/ref.bib`
-5. **Customize** data files in `_data/` (team members, news, awards, etc.)
-6. **Preview** your site:
-   ```bash
-   bundle exec jekyll serve
-   # open http://localhost:4000
-   ```
+<p align="center">
+  <img src="public/assets/screenshots/lighthouse-score.png" width="80%" alt="Lighthouse Score">
+</p>
 
-## Detailed How-To Guide
+### 🤖 Smart Automation
+*   **One-Click BibTeX Import**: Stop manually copying papers. Drop your `citations.bib` and run one command.
+*   **Intelligent Parsing**: Automatically extracts **PDF links**, **Code repositories**, **Project Websites**, **Videos**, and **Cover images**.
+*   **Asset Management**: Smart fallback system for missing publication covers.
+*   **Auto-Badging**: Automatically highlights "Best Paper", "Oral", or "Spotlight" awards based on BibTeX notes.
 
-### Step 1: Fork and Clone
+### 🌍 Global Reach
+*   **Multilingual Search**: Built-in **Pagefind** search engine supporting **8 languages** (English, Chinese, Japanese, Korean, French, German, Spanish, Russian).
+*   **i18n Ready**: Native support for internationalization with type-safe translations.
 
+---
+
+## 🆚 Comparison: Scholar-Lite vs. Hugo Academic
+
+| Feature | 🎓 Scholar-Lite | 🐢 Hugo Academic (Wowchemy) |
+| :--- | :--- | :--- |
+| **Tech Stack** | **Astro v6 + React + Tailwind v4** (Modern & Mainstream) | Hugo + Go Templates (Steep learning curve) |
+| **Performance** | **100/100 Lighthouse** (Zero JS by default) | Good, but often bloated with heavy JS |
+| **BibTeX Import** | **Zero-Config** (Drag & drop `citations.bib`) | Complex Python scripts / Manual entry |
+| **Customization** | **Component-based** (Edit `.astro` / `.tsx` files directly) | Rigid Theme (Overriding internal templates is hard) |
+| **Multilingual** | **Native i18n + Pagefind** (Search in 8 languages) | Partial support, search often breaks |
+| **Dev Experience** | **Hot Reload (HMR)** in milliseconds | Slower rebuilds on large sites |
+| **Ecosystem** | **NPM / Node.js** (Access to millions of packages) | Go Modules (Limited web-focused packages) |
+
+---
+
+## 🛠️ Quick Start
+
+### Prerequisites
+*   Node.js v22.12.0 or higher
+
+### 1. Installation
 ```bash
-# Fork the repo on GitHub, then clone your fork
-git clone https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
-cd YOUR_USERNAME.github.io
-```
-
-### Step 2: Install Dependencies
-
-You need Ruby and Jekyll installed. See [Jekyll's installation guide](https://jekyllrb.com/docs/installation/).
-
-```bash
-# Install Ruby gems
-bundle install
-
-# Optional: install Node.js dependencies (only needed if you want to edit JS)
+git clone https://github.com/your-repo/scholar-lite.git
+cd scholar-lite
 npm install
 ```
 
-### Step 3: Configure Your Identity
-
-Open `_config.yml` and fill in your information. The file is organized into numbered steps:
-
-```yaml
-# STEP 1: Your Identity
-name: "Jane Smith"
-title: "Assistant Professor of Computer Science"
-institution: "Stanford University"
-email: jsmith@stanford.edu
-photo: headshot.jpg   # place your photo in images/
-```
-
-Or run the interactive setup script:
-
+### 2. Development
+Start the local server with hot module replacement:
 ```bash
-./setup.sh
+npm run dev
 ```
+Visit `http://localhost:4321`.
 
-### Step 4: Add Your Links
-
-Still in `_config.yml`, add your academic profiles. Delete any you don't use:
-
-```yaml
-# STEP 2: Your Links
-links:
-  google_scholar: "https://scholar.google.com/citations?user=YOUR_ID"
-  github: "https://github.com/yourusername"
-  orcid: "https://orcid.org/0000-0000-0000-0000"
-  cv: "papers/cv.pdf"        # place your CV in the papers/ directory
-  twitter: ""                # leave blank to hide
-  linkedin: ""
-```
-
-### Step 5: Add Your Photo
-
-Place your profile photo in the `images/` directory. Update the `photo` field in `_config.yml` to match the filename.
-
-### Step 6: Add Publications
-
-Edit `assets/ref.bib` with your BibTeX entries. The publications page is auto-generated. Example:
-
-```bibtex
-@article{smith2024,
-  author = {Smith, Jane and Doe, John},
-  title = {A Novel Approach to Machine Learning},
-  journal = {Nature},
-  year = {2024},
-  volume = {42},
-  pages = {1--10},
-  doi = {10.1234/example},
-  file = {smith2024.pdf},       % place PDF in papers/
-  abstract = {We present...}
-}
-```
-
-To bold your name in the publication list, update the scholar settings in `_config.yml`:
-
-```yaml
-scholar:
-  last_name: Smith
-  first_name: [Jane, J.]
-```
-
-Then uncomment the name-bolding line in `_layouts/bibtemplate.html`.
-
-### Step 7: Add Team Members
-
-Edit `_data/team_members.yml`:
-
-```yaml
-- name: Alice Johnson
-  photo: alice.jpg          # place in images/ or images/team/
-  info: PhD Student, started Fall 2023
-  email: alice@university.edu
-  website: https://alice.dev
-  github: https://github.com/alice
-```
-
-### Step 8: Add News
-
-Edit `_data/news.yml` (newest first):
-
-```yaml
-- date: 15 March, 2024
-  headline: "Our paper on X was accepted to NeurIPS!"
-
-- date: 1 January, 2024
-  headline: "Welcome to new PhD student Alice Johnson"
-```
-
-### Step 9: Customize Pages
-
-Each page in `_pages/` is a Markdown file. Edit the content directly:
-
-- `home.md` — your welcome text and bio
-- `research.md` — describe your research areas
-- `software.md` — list your software projects
-- `teaching.md` — list your courses
-
-To remove a page from the navbar, comment it out in `_config.yml`:
-
-```yaml
-nav_pages:
-  - name: about
-  - name: publications
-  # - name: talks        # hidden from navbar
-  - name: research
-```
-
-### Step 10: Preview and Deploy
-
+### 3. Production Build
+Generate the static site and search index:
 ```bash
-# Preview locally
-bundle exec jekyll serve
-# Visit http://localhost:4000
-
-# When ready, push to GitHub
-git add -A
-git commit -m "My academic website"
-git push
+npm run build
 ```
-
-A GitHub Actions workflow automatically builds and deploys your site on every push. Make sure to go to **Settings > Pages > Source** in your repo and select **GitHub Actions**.
-
-Your site will be live at `https://YOUR_USERNAME.github.io` within a few minutes.
+*Note: The search index is generated at build time. Search functionality requires the build step.*
 
 ---
 
-## Customization
+## 📚 Smart Publication & Book Management
 
-### _config.yml
+Scholar-Lite features a powerful **BibTeX Import Engine** located in `scripts/import-bibtex.js`, supporting both **Papers** and **Books**.
 
-The config file is organized into 4 numbered steps:
+### How to Import
+1.  **Export BibTeX**: Export your bibliography as `citations.bib` from Zotero, Mendeley, or Google Scholar.
+2.  **Place File**: Save `citations.bib` in the project root.
+3.  **Run Import**:
+    ```bash
+    npm run import-bibtex
+    ```
+4.  **Auto-Classification**: The system automatically classifies entries based on BibTeX type:
+    *   `@article`, `@inproceedings`, etc. -> Imported to **Publications** (`src/content/publications`)
+    *   `@book` -> Imported to **Books** (`src/content/books`)
 
-| Step | Section | What to fill in |
-|------|---------|-----------------|
-| 1 | **Your Identity** | Name, title, institution, email, photo |
-| 2 | **Your Links** | Google Scholar, GitHub, ORCID, Twitter, LinkedIn, CV |
-| 3 | **Site Settings** | Accent color, dark mode toggle, analytics |
-| 4 | **Your Pages** | Comment out any pages you don't need |
+### Advanced BibTeX Features
 
-### Data Files
+The importer maps BibTeX fields to website elements intelligently:
 
-| File | Purpose |
-|------|---------|
-| `_data/team_members.yml` | Current students and postdocs |
-| `_data/alumni.yml` | Former lab members |
-| `_data/news.yml` | News items (3 most recent shown on home) |
-| `_data/awards.yml` | Awards and honors |
-| `_data/grants.yml` | Grants and funding |
-| `_data/funders.yml` | Funder logos |
-| `_data/people.yml` | Students and mentees |
-| `_data/pi.yml` | Optional: detailed education for About page |
+| BibTeX Field | Website Element | Smart Behavior |
+|--------------|-----------------|----------------|
+| `cover`/`image` | Cover Image | Auto-detects local images in `src/assets/`. **Highly recommended for books**. |
+| `publisher` | Publisher | For books, `publisher` is automatically displayed as the venue. |
+| `pdf`/`url`/`file` | PDF Button | Cleans Zotero path formats (e.g., `files/mypaper.pdf`). |
+| `code`/`github` | Code Button | Generates a GitHub/Code link button. |
+| `website`/`project` | **Project Page** | Generates a Globe icon link to the project homepage. |
+| `demo` | **Live Demo** | Generates a "Demo" button (Web App / HuggingFace / Video). |
+| `video`/`recording` | **Video** | Generates a Video link button. |
+| `slides`/`ppt` | **Slides** | Generates a Slides download button. |
+| `award`/`note` | **Badges** | Auto-generates Gold/Blue/Red badges for "Best Paper", "Oral", etc. |
 
-Each file has inline comments explaining every field. Entries marked `# EXAMPLE` should be replaced or deleted.
+### BibTeX Entry Examples
 
-### Pages
-
-All pages are in `_pages/`. Edit the Markdown content directly. Pages use the `gridlay` layout by default.
-
-### Accent Color & Dark Mode
-
-Set `accent_color` in `_config.yml` to change the theme color across the entire site (links, buttons, highlights, favicon). Set `dark_mode: false` to disable the dark mode toggle entirely.
-
-### CSS & JS Customization
-
-The site uses modular SASS in `_sass/`:
-
+#### 1. Paper
+```bibtex
+@article{gpt4,
+  title={GPT-4 Technical Report},
+  author={OpenAI},
+  year={2024},
+  journal={ArXiv},
+  url={https://arxiv.org/pdf/2303.08774.pdf},
+  code={https://github.com/openai/evals},
+  cover={../../assets/gpt4-cover.jpg},
+  note={Tech Report}
+}
 ```
-_sass/
-  base/          # variables, typography, reset
-  components/    # card, navbar, buttons, footer, profile, publication, search
-  layouts/       # home grid, team grid, research grid
-  utilities/     # dark mode, animations
+
+#### 2. Book
+Simply set the entry type to `@book`, and the system will automatically place it in the "Books" section.
+```bibtex
+@book{deeplearning,
+  title={Deep Learning},
+  author={Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
+  publisher={MIT Press},
+  year={2016},
+  url={http://www.deeplearningbook.org},
+  cover={../../assets/book-deep-learning.jpg}
+}
 ```
 
-For JavaScript, edit `assets/js/site.js` then run `npm run build` to minify. Pre-built JS is committed, so `npm` is only needed if you modify the source.
+---
 
-## Publications
+## 🌟 Best Practices
 
-Publications are managed via [Jekyll Scholar](https://github.com/inukshuk/jekyll-scholar) using BibTeX. Edit `assets/ref.bib` with your references.
+### 📁 Directory Structure
+*   **Images**: Store website assets in `src/assets/images/`. Use `.webp` or optimized `.jpg` for better performance.
+*   **Team Photos**: Place headshots in `src/assets/team/`. Square aspect ratio (1:1) is recommended.
+*   **Content**: All editable content (News, Team, Research info) lives in `src/content/`.
 
-Update `scholar.last_name` and `scholar.first_name` in `_config.yml` to auto-bold your name in the publication list.
+### 📝 Content Management
+*   **News**: Add new Markdown files in `src/content/news/`. The filename doesn't matter, but sorting is based on the `date` field.
+*   **Team**: Add members in `src/content/team/`. Use `weight` to control display order (lower numbers appear first).
+*   **Research Fields**: Add Markdown files in `src/content/research/`. Use `order` field to control display order.
+*   **Translations**: Edit `src/i18n/ui.ts` to modify UI text (e.g., navigation menu, buttons) for all supported languages.
 
-## Hosting
+### 🎓 More Academic Achievements
+Beyond papers and books, the system supports managing other academic achievements. Simply create Markdown files in the corresponding folders.
 
-### GitHub Pages
+#### 1. Software Copyrights
+*   **Location**: `src/content/softwares/`
+*   **Example**:
+    ```markdown
+    ---
+    title: "Intelligent Image Processing System V1.0"
+    developers: ["John Doe", "Jane Smith"]
+    number: "2023SR123456"
+    date: 2023-06-15
+    description: "An automated image processing platform based on deep learning."
+    ---
+    ```
 
-Fork this repo as `your_username.github.io` and push. A **GitHub Actions workflow** is included (`.github/workflows/deploy.yml`) that automatically builds the site with Jekyll Scholar and deploys to GitHub Pages on every push to `source`.
+#### 2. Invention Patents
+*   **Location**: `src/content/patents/`
+*   **Example**:
+    ```markdown
+    ---
+    title: "A Method for Image Recognition Based on Attention Mechanism"
+    inventors: ["John Doe", "Bob Johnson"]
+    number: "CN102345678B"
+    date: 2024-01-20
+    status: "Granted" # Options: Granted, Pending, Filed
+    ---
+    ```
 
-To enable it: go to your repo's **Settings > Pages > Source** and select **GitHub Actions** instead of "Deploy from a branch".
+#### 3. Group Honors
+*   **Location**: `src/content/honors/`
+*   **Example**:
+    ```markdown
+    ---
+    title: "18th Challenge Cup National College Student Extracurricular Academic Science and Technology Works Competition"
+    award: "Grand Prize"
+    date: 2023-10-30
+    year: "2023"
+    type: "Challenge Cup"  # Options: Challenge Cup, Internet+, Other
+    level: "Special"       # Options: Special, First, Second, Third
+    ---
+    ```
 
-### Custom Domain
 
-Purchase a domain, update the `CNAME` file, and configure DNS. See [GitHub's guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+### 🖼️ Image Optimization
+Scholar-Lite automatically optimizes images imported from `src/assets/`.
+*   **Avoid**: Putting large images in `public/`.
+*   **Prefer**: Importing images in Markdown or Astro components to leverage automatic compression and lazy loading.
 
-### Self-Hosting
+---
 
-Build with `bundle exec jekyll serve`, then upload `_site/` to your server. Set `url` and `baseurl` in `_config.yml` accordingly.
+## 🚢 Deployment
 
-## Upgrading
+Scholar-Lite is a static site that can be deployed anywhere.
 
-Coming from the previous version? See [UPGRADING.md](UPGRADING.md).
+### Recommended Platforms
 
-## Alternatives
+| Platform | Global Speed | Ease of Use | Cost |
+|----------|--------------|-------------|------|
+| **Cloudflare Pages** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Free |
+| **Vercel** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Free |
+| **Netlify** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Free |
+| **GitHub Pages** | ⭐⭐⭐ | ⭐⭐⭐⭐ | Free |
 
-* [al-folio](https://github.com/alshedivat/al-folio)
-* [academicpages](https://academicpages.github.io/)
-* [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)
+### Cloudflare Pages / Vercel / Netlify
+1.  Connect your GitHub/GitLab repository.
+2.  **Build Command**: `npm run build`
+3.  **Output Directory**: `dist`
+4.  Deploy!
 
-## Acknowledgment
+### GitHub Pages / GitLab Pages
+This template includes CI/CD configurations (`.github/workflows` and `.gitlab-ci.yml`) to automatically build and deploy to GitHub/GitLab Pages on push.
 
-I credit the [Allen Lab](https://www.allanlab.org/) for creating a beautiful academic research group webpage. Many parts of this site were adopted or copied from their laboratory webpage.
+---
 
-## License
+<div align="center">
 
-MIT
+**[Scholar-Lite Team](https://github.com/fjd2004711)**
+<br>
+*Empowering academic research with modern web technology.*
+
+</div>

@@ -1,0 +1,54 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'publications'>;
+  compact?: boolean;
+}
+
+const { entry, compact = false } = Astro.props;
+const { title, authors, year, venue, doi, status, number, citation, funding } = entry.data;
+
+// Bold the PI's name wherever it appears (with or without the corresponding-author mark).
+const isPI = (a: string) => /^(D\.|Daehyun)\s+Kim\*?$/.test(a.trim());
+const statusLabel: Record<string, string> = {
+  accepted: 'Accepted',
+  revised: 'Revised',
+  submitted: 'Under review',
+};
+const doiUrl = doi ? (doi.startsWith('http') ? doi : `https://doi.org/${doi}`) : undefined;
+---
+
+<article class="flex gap-4 py-5 border-b border-gray-100 last:border-0">
+  {!compact && number && (
+    <span class="shrink-0 w-10 text-right text-sm text-gray-400 tabular-nums pt-0.5">{number}</span>
+  )}
+  <div class="flex-grow space-y-1.5 min-w-0">
+    <h3 class="text-base sm:text-lg font-semibold text-gray-900 leading-snug">
+      {doiUrl ? <a href={doiUrl} target="_blank" rel="noopener" class="hover:text-blue-600 transition-colors">{title}</a> : title}
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      {authors.map((a, i) => (
+        <>
+          {isPI(a) ? <strong class="font-semibold text-gray-900">{a}</strong> : a}{i < authors.length - 1 ? ', ' : ''}
+        </>
+      ))}
+    </p>
+    <div class="flex items-center flex-wrap gap-x-2 gap-y-1 text-sm text-gray-500">
+      {venue && <span class="italic text-gray-700">{venue}</span>}
+      {citation && <span>{citation}</span>}
+      {status === 'published' && <span>· {year}</span>}
+      {status !== 'published' && (
+        <span class={`px-2 py-0.5 rounded-full text-xs font-medium border ${status === 'accepted' ? 'bg-amber-50 text-amber-700 border-amber-200' : 'bg-blue-50 text-blue-700 border-blue-100'}`}>
+          {statusLabel[status]}
+        </span>
+      )}
+      {!compact && doiUrl && (
+        <a href={doiUrl} target="_blank" rel="noopener" class="text-blue-600 hover:underline">DOI</a>
+      )}
+    </div>
+    {!compact && funding && (
+      <p class="text-xs text-gray-400">Funding: {funding}</p>
+    )}
+  </div>
+</article>

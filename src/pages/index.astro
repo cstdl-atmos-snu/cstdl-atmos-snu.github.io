@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { ArrowRight, Microscope, BookOpenText, UserPlus } from 'lucide-react';
+import { SITE } from '../config';
+
+const rolePriority: Record<string, number> = {
+  'Principal Investigator': 0, 'Research Professor': 1, 'Postdoc': 2,
+  'PhD Student': 3, 'Master Student': 4, 'Undergraduate': 5,
+};
+const team = (await getCollection('team'))
+  .filter(m => m.data.role !== 'Alumni')
+  .sort((a, b) => (rolePriority[a.data.role] ?? 9) - (rolePriority[b.data.role] ?? 9) || a.data.weight - b.data.weight);
+
+const recent = (await getCollection('publications'))
+  .filter(p => p.data.status === 'published')
+  .sort((a, b) => (b.data.number ?? 0) - (a.data.number ?? 0))
+  .slice(0, 3);
+
+const news = (await getCollection('news'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const roleLabel: Record<string, string> = {
+  'Principal Investigator': 'Associate Professor', 'Research Professor': 'Research Faculty',
+  'Postdoc': 'Postdoc', 'PhD Student': 'Ph.D. Student', 'Master Student': 'M.S. Student', 'Undergraduate': 'Undergraduate',
+};
+
+const cards = [
+  { href: '/research', icon: Microscope, title: 'Research', text: 'The MJO, convectively coupled waves, tropical cyclones, deep convection, and extreme precipitation.' },
+  { href: '/publications', icon: BookOpenText, title: 'Publications', text: 'Peer-reviewed papers, updated automatically from the lab database.' },
+  { href: '/join', icon: UserPlus, title: 'Join us', text: 'Openings for postdocs, graduate students, and undergraduate interns.' },
+];
+---
+
+<Layout title="Home">
+  <!-- Hero -->
+  <section class="relative flex items-end overflow-hidden" style="height: clamp(380px, 36vw, 640px);">
+    <div class="absolute inset-0 z-0">
+      <Image
+        class="w-full h-full object-cover object-center"
+        src={SITE.hero.image}
+        alt={SITE.hero.credit}
+        loading="eager"
+        fetchpriority="high"
+        quality={75}
+        format="webp"
+        widths={[768, 1280, 2084]}
+        sizes="100vw"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-950/45 to-blue-950/10"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-14">
+      <p class="text-sm font-medium tracking-wide text-blue-100 mb-3">{SITE.department}, {SITE.university}</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight max-w-3xl">{SITE.hero.title}</h1>
+      <p class="mt-5 text-lg md:text-xl text-blue-50/90 max-w-2xl">{SITE.hero.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Team strip -->
+  <section class="py-14 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-end mb-8">
+        <h2 class="text-2xl font-bold text-gray-900">Our team</h2>
+        <a href="/team" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group text-sm">
+          Meet the full team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+      <div class="flex gap-6 overflow-x-auto pb-3 custom-scrollbar">
+        {team.map(m => (
+          <a href={`/team/${m.id.replace(/\.[^/.]+$/, '')}`} class="shrink-0 w-28 text-center group">
+            <img src={m.data.avatar.src} alt={m.data.name} loading="lazy" class="w-24 h-24 mx-auto rounded-full object-cover ring-2 ring-transparent group-hover:ring-blue-600 transition" />
+            <h3 class="mt-3 text-sm font-semibold text-gray-900 leading-tight">{m.data.name}</h3>
+            <p class="text-xs text-gray-500 mt-0.5">{roleLabel[m.data.role] ?? m.data.role}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section cards -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 md:grid-cols-3">
+      {cards.map(c => (
+        <a href={c.href} class="group bg-white rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition-all">
+          <c.icon className="w-6 h-6 text-blue-600 mb-4" />
+          <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{c.title}</h3>
+          <p class="text-sm text-gray-600">{c.text}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Recent publications -->
+  <section class="py-14 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-end mb-4">
+        <h2 class="text-2xl font-bold text-gray-900">Recent publications</h2>
+        <a href="/publications" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group text-sm">
+          View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+      {recent.map(p => <PublicationItem entry={p} compact />)}
+    </div>
+  </section>
+
+  <!-- News -->
+  {news.length > 0 && (
+    <section class="py-14 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-end mb-6">
+          <h2 class="text-2xl font-bold text-gray-900">Latest news</h2>
+          <a href="/news" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group text-sm">
+            View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+        <div class="space-y-5">
+          {news.map(n => (
+            <article class="border-l-2 border-blue-600 pl-4">
+              <p class="text-xs text-gray-500">{n.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              <h3 class="font-semibold text-gray-900">{n.data.title}</h3>
+              {n.data.summary && <p class="text-sm text-gray-600">{n.data.summary}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

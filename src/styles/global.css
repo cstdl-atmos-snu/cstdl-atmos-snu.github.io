@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* Pretendard: web substitute for the SNU designated typefaces
+   (Yoon Gothic 765 / Univers LT Std), which are not licensed for the web. */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SNU identity colors (SNU UI guideline, BS09).
+   The template's "blue" scale is remapped to SNU Blue (RGB 15,15,112),
+   so every accent in the site follows it; "amber" is remapped to SNU Gold. */
+@theme {
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
+
+  --color-blue-50:  #eeeef7;
+  --color-blue-100: #dcdcef;
+  --color-blue-200: #b7b7dd;
+  --color-blue-300: #8a8ac6;
+  --color-blue-400: #5858a8;
+  --color-blue-500: #2f2f8c;
+  --color-blue-600: #0f0f70;   /* SNU Blue */
+  --color-blue-700: #0c0c5c;
+  --color-blue-800: #090948;
+  --color-blue-900: #060634;
+  --color-blue-950: #04041f;
+
+  --color-amber-50:  #f6f2ec;
+  --color-amber-100: #ece3d6;
+  --color-amber-200: #dccdb8;
+  --color-amber-700: #7d6448;  /* SNU Gold (screen approximation) */
+
+  --color-gray-50: #f7f7f2;    /* light tint of SNU Beige */
+
+  --color-snu-blue: #0f0f70;
+  --color-snu-beige: #dcdab2;
+  --color-snu-gray: #666666;
+  --color-snu-gold: #7d6448;
+  --color-snu-silver: #85898f;
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply text-gray-800 bg-white antialiased;
+  word-break: keep-all;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { @apply bg-gray-50; }
+::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-gray-200 rounded-full; }
