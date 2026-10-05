@@ -205,6 +205,7 @@ if __name__ == "__main__":
     papers = load_papers(src)
     if not papers:
         sys.exit("The Web tab returned no papers. Check that it is published as CSV.")
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as fh:
         fh.write(to_bibtex(papers))
     n_pub = sum(p["status"] == "Published" for p in papers)

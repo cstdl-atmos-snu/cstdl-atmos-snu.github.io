@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [source]
+    branches: [main, source]
   schedule:
     - cron: "0 18 * * *"   # every day at 03:00 KST: pick up changes in the CSTDL sheet
   workflow_dispatch:         # "Run workflow" button for an immediate update
